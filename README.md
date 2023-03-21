@@ -28,4 +28,13 @@ To test an external API call :
 curl -X POST http://localhost:8080/predictions/stardust -F "inp1=@example_input1.npy" -F "inp2=@example_input2.npy"
 
 
+Configure model serving (change model configuration)  :
+
+
+curl -X POST "http://localhost:8081/models?url=stardust.mar&batch_size=8&max_batch_delay=300&min_worker=1"
+
+
+curl -v -X PUT "http://localhost:8081/models/stardust?min_worker=1"
+
+
 
